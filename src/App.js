@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import {useEffect} from 'react';
 import './App.css';
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";  
+import Navbar from './components/Navbar';
+import ParticlesContent from './components/ParticlesContent';
+import ProfilePhoto from './components/ProfilePhoto';
+import AboutMe from './components/AboutMe';
 
-function App() {
+const App = () => {
+
+  useEffect(() => {
+    document.body.classList.add('bg-gray');
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Navbar />
+        <ParticlesContent style={{height: '300px'}} />
+        <ProfilePhoto />
+        <AboutMe />
     </div>
   );
+
 }
 
 export default App;
