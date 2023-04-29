@@ -1,32 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import * as S from './styles';
+import api from './../../services/api';
 
 const ProfilePhoto = () => {
 
-    const style_div = {
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: '-150px'
-    };
+    const [user, setUser] = useState();
 
-    const style_photo = {
-        width: '278px',
-        height: '270px',
-        backgroundColor: '#b5a7a7',
-        position: 'absolute',
-        borderRadius: '437px',
-        background: "url('https://cf.workana.com/logos/09cf6f06ded4aba223b232dd2dfb0631/cj/56823274_787204115006311_8794291962032160768_n_192_192.jpg')",
-        backgrounRepeat: 'noRepeat',
-        backgroundSize: 'cover',
-        border: '3px solid white',
-    };
+    useEffect(() => {
+        api
+        .get("/user/get-data")
+        .then((response) => setUser(response.data))
+        .catch((err) => {
+            console.log("Erro: " + err);
+        });
+    }, []);
+
+    const name = user?.username;
 
     return (
-        <div id="contentPhoto" style={style_div}>
-            <div id="profilePhoto" style={style_photo}>
-    
-            </div>
-        </div>
+        <S.Container>
+            <S.Photo/>
+            <S.Info>
+                <h1>{name}</h1>
+                <h2>{'Desenvolvedor Web FullStack'}</h2>
+            </S.Info>
+        </S.Container>
     );
 };
     

@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 import ParticlesContent from './components/ParticlesContent';
 import ProfilePhoto from './components/ProfilePhoto';
 import AboutMe from './components/AboutMe';
-
+import GlobalStyle from './Global/style';
 const App = () => {
 
   useEffect(() => {
@@ -16,11 +16,13 @@ const App = () => {
 
   return (
     <div className="App">
+      <GlobalStyle/>
         <Navbar />
         <ParticlesContent style={{height: '300px'}} />
         <ProfilePhoto />
         <AboutMe />
     </div>
+
   );
 
 }
