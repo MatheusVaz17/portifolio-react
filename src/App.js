@@ -8,6 +8,7 @@ import ParticlesContent from './components/ParticlesContent';
 import ProfilePhoto from './components/ProfilePhoto';
 import AboutMe from './components/AboutMe';
 import GlobalStyle from './Global/style';
+import Skills from './components/Skills';
 const App = () => {
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const App = () => {
         <ParticlesContent style={{height: '300px'}} />
         <ProfilePhoto />
         <AboutMe />
+        <Skills />
     </div>
 
   );

@@ -19,7 +19,7 @@ const ProfilePhoto = () => {
 
     return (
         <S.Container>
-            <S.Photo/>
+            <S.Photo photo={user?.profilePhoto} />
             <S.Info>
                 <h1>{name}</h1>
                 <h2>{'Desenvolvedor Web FullStack'}</h2>

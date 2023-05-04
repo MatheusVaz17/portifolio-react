@@ -13,7 +13,7 @@ export const Photo = styled.div`
         background-color: #b5a7a7;
         margin: 0 auto;
         border-radius: 437px;
-        background: url(https://cf.workana.com/logos/09cf6f06ded4aba223b232dd2dfb0631/cj/56823274_787204115006311_8794291962032160768_n_192_192.jpg);
+        background: url(${props => props.photo});
         background-repeat: no-repeat;
         background-size: cover;
         border: 3px solid white;

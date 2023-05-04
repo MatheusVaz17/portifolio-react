@@ -6,7 +6,8 @@ const Navbar = () => {
     const items = [
         {
             label: 'Sobre mim',
-            icon: 'pi pi-fw pi-user'
+            icon: 'pi pi-fw pi-user',
+            url: '#aboutMe'
         },
         {
             label: 'Habilidades',
@@ -22,11 +23,13 @@ const Navbar = () => {
         },
         {
             label: 'GitHub',
-            icon: 'pi pi-github'
+            icon: 'pi pi-github',
+            target: '_blank',
+            url: 'https://github.com/MatheusVaz17'
         }
       ];
     
-      const start = <img alt="logo" src="https://primefaces.org/cdn/primereact/images/logo.png" height="40" className="mr-2"></img>;
+      const start = <h2 style={{margin: '0', color: 'white'}}>Mv</h2>;
       const end = <InputText placeholder="Search" type="text" className="w-full" />;
 
       return (
