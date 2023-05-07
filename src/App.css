@@ -40,3 +40,11 @@
 .bg-gray{
   background-color: gray;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+a href{
+  transition: 700ms;
+}

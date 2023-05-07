@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-
+import 'primeflex/primeflex.css';
 
 const GlobalStyle = createGlobalStyle`
 
