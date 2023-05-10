@@ -7,8 +7,21 @@ const Skills = () => {
     const handleClick = (event, cardId) => {
         console.log(cardId);
         var descriptionCard = document.getElementById(cardId);
-        descriptionCard.style.display = 'flex';
-      };
+        //descriptionCard.style.display = 'flex';
+        descriptionCard.style.display = '';
+        descriptionCard.style.opacity = 0;
+        var last = +new Date();
+        var tick = function() {
+        descriptionCard.style.opacity = +descriptionCard.style.opacity + (new Date() - last) / 600;
+        last = +new Date();
+            if (+descriptionCard.style.opacity < 1) {
+                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+            }
+        };
+
+        tick();
+
+    }
 
     const titleFrontEnd = (
         <S.StyledTitleCard>FRONTEND</S.StyledTitleCard>
@@ -30,7 +43,7 @@ const Skills = () => {
 
     const footerCards = (cardId) => {
     
-        return <S.StyledButtonArrow label={arrowIcon} onClick={(e) => handleClick(e, cardId)} className="btnFooterCard -close" severity="secondary" size="small" text raised rounded />
+        return <S.StyledButtonArrow label={arrowIcon} onClick={(e) => handleClick(e, cardId)} className="btnFooterCard -close" size="small" text raised rounded />
         
     };
 
@@ -54,8 +67,8 @@ const Skills = () => {
                             <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
                                 <S.StyledCard className="cardFront" title={titleFrontEnd} footer={footerCards('descriptionFront')}>
                                     <h1><S.StyledJsIcon /> <S.StyledBootstrapIcon /> <S.StyledReactIcon /></h1>
-                                    <p className="m-0" id="descriptionFront" style={{display: 'none'}}>
-                                        DESCRIÇÃO FRONT END
+                                    <p className="m-0 description" id="descriptionFront" style={{display: 'none'}}>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
                                     </p>
 
                                 </S.StyledCard>
@@ -64,8 +77,8 @@ const Skills = () => {
                             <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
                                 <S.StyledCard className="cardBack" title={titleBackEnd} footer={footerCards('descriptionBack')}>
                                     <h1><S.StyledPhpIcon /><S.StyledYiiIcon /><S.StyledLaravelIcon/></h1>
-                                    <p className="m-0" id="descriptionBack" style={{display: 'none'}}>
-                                        DESCRIÇÃO BACK END
+                                    <p className="m-0 description" id="descriptionBack" style={{display: 'none'}}>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
                                     </p>
                                 </S.StyledCard>
                             </div>
@@ -73,8 +86,8 @@ const Skills = () => {
                             <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
                                 <S.StyledCard className="cardOthers" title={titleOthers} footer={footerCards('descriptionOthers')}>
                                     <h1><S.StyledMysqlIcon /><S.StyledGitIcon /><S.StyledChipIcon /></h1>
-                                    <p className="m-0" id="descriptionOthers" style={{display: 'none'}}>
-                                        DESCRIÇÃO OUTROS
+                                    <p className="m-0 description" id="descriptionOthers" style={{display: 'none'}}>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
                                     </p>
                                 </S.StyledCard>
                             </div>

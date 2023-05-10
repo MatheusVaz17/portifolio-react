@@ -65,10 +65,16 @@ export const StyledCard = styled(Card)`
     border-radius: 20px;
     box-shadow: 7px 7px gray;
     border: 1px solid darkgray;
+    .description{
+        justify-content: center
+    }
     &:hover{
         background-color: gray;
         box-shadow: 7px 7px white;
         border: none;
+        .description{
+            color: white
+        }
         ${StyledJsIcon}, ${StyledBootstrapIcon}, ${StyledReactIcon}, ${StyledPhpIcon}, ${StyledYiiIcon}, ${StyledLaravelIcon}, ${StyledMysqlIcon}, ${StyledGitIcon}, ${StyledChipIcon} {
             fill: white;
         }
