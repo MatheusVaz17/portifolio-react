@@ -4,7 +4,7 @@ import {SiJavascript, SiBootstrap, SiPhp, SiLaravel, SiMysql} from 'react-icons/
 import {FaReact} from 'react-icons/fa';
 import {DiYii} from 'react-icons/di';
 import {BiGitBranch, BiChip} from 'react-icons/bi';
-import {AiOutlineArrowDown} from 'react-icons/ai';
+import {AiOutlineArrowDown, AiOutlineArrowUp} from 'react-icons/ai';
 import {Button} from 'primereact/button';
 
 export const StyledJsIcon = styled(SiJavascript)`
@@ -54,6 +54,9 @@ export const StyledButtonArrow = styled(Button)`
 `;
 
 export const StyledArrowDownIcon = styled(AiOutlineArrowDown)`
+`;
+
+export const StyledArrowUpIcon = styled(AiOutlineArrowUp)`
 `;
 
 export const StyledTitleCard = styled.div`

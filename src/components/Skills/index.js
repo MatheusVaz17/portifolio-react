@@ -4,22 +4,46 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 
 const Skills = () => {
 
-    const handleClick = (event, cardId) => {
-        console.log(cardId);
-        var descriptionCard = document.getElementById(cardId);
-        //descriptionCard.style.display = 'flex';
-        descriptionCard.style.display = '';
-        descriptionCard.style.opacity = 0;
-        var last = +new Date();
-        var tick = function() {
-        descriptionCard.style.opacity = +descriptionCard.style.opacity + (new Date() - last) / 600;
-        last = +new Date();
-            if (+descriptionCard.style.opacity < 1) {
-                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
-            }
-        };
+    const arrowDownIcon =(
+        <>
+            <S.StyledArrowDownIcon />
+        </>
+    );
 
-        tick();
+    const arrowUpIcon =(
+        <>
+            <S.StyledArrowUpIcon />
+        </>
+    );
+
+    const [icon, setIcon] = useState(arrowDownIcon);
+
+    const handleClick = (event, cardId, cardDescription) => {
+       
+        var descriptionCard = document.getElementById(cardDescription);
+        var btnCard = document.getElementById('btn'+cardId);
+
+        //setIcon(icon == arrowDownIcon ? arrowUpIcon : arrowDownIcon);
+
+        if(descriptionCard.style.opacity > 0){
+            descriptionCard.style.opacity = 0;
+            descriptionCard.style.display = 'none';
+        }else{
+            //descriptionCard.style.display = 'flex';
+            descriptionCard.style.display = '';
+            descriptionCard.style.opacity = 0;
+            var last = +new Date();
+            var tick = function() {
+            descriptionCard.style.opacity = +descriptionCard.style.opacity + (new Date() - last) / 600;
+            last = +new Date();
+                if (+descriptionCard.style.opacity < 1) {
+                    (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+                }
+            };
+
+            tick();
+        }
+        
 
     }
 
@@ -35,15 +59,9 @@ const Skills = () => {
         <S.StyledTitleCard>OUTROS</S.StyledTitleCard>
     );
 
-    const arrowIcon =(
-        <>
-            <S.StyledArrowDownIcon />
-        </>
-    );
-
-    const footerCards = (cardId) => {
+    const footerCards = (cardId, descriptionId) => {
     
-        return <S.StyledButtonArrow label={arrowIcon} onClick={(e) => handleClick(e, cardId)} className="btnFooterCard -close" size="small" text raised rounded />
+        return <S.StyledButtonArrow onClick={(e) => handleClick(e, cardId, descriptionId)} id={'btn'+cardId} className="btnFooterCard -close" severity="secondary" size="small" text raised rounded> {icon} </S.StyledButtonArrow>
         
     };
 
@@ -65,7 +83,7 @@ const Skills = () => {
                             <h1 style={{color: 'white'}}>HABILIDADES</h1>
 
                             <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
-                                <S.StyledCard className="cardFront" title={titleFrontEnd} footer={footerCards('descriptionFront')}>
+                                <S.StyledCard className="cardFront" title={titleFrontEnd} footer={footerCards('cardFront', 'descriptionFront')}>
                                     <h1><S.StyledJsIcon /> <S.StyledBootstrapIcon /> <S.StyledReactIcon /></h1>
                                     <p className="m-0 description" id="descriptionFront" style={{display: 'none'}}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
@@ -75,7 +93,7 @@ const Skills = () => {
                             </div>
 
                             <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
-                                <S.StyledCard className="cardBack" title={titleBackEnd} footer={footerCards('descriptionBack')}>
+                                <S.StyledCard className="cardBack" title={titleBackEnd} footer={footerCards('cardBack', 'descriptionBack')}>
                                     <h1><S.StyledPhpIcon /><S.StyledYiiIcon /><S.StyledLaravelIcon/></h1>
                                     <p className="m-0 description" id="descriptionBack" style={{display: 'none'}}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
@@ -84,7 +102,7 @@ const Skills = () => {
                             </div>
 
                             <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
-                                <S.StyledCard className="cardOthers" title={titleOthers} footer={footerCards('descriptionOthers')}>
+                                <S.StyledCard className="cardOthers" title={titleOthers} footer={footerCards('cardOthers', 'descriptionOthers')}>
                                     <h1><S.StyledMysqlIcon /><S.StyledGitIcon /><S.StyledChipIcon /></h1>
                                     <p className="m-0 description" id="descriptionOthers" style={{display: 'none'}}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
