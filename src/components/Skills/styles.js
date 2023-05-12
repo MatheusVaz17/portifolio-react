@@ -48,6 +48,12 @@ export const StyledChipIcon = styled(BiChip)`
 `;
 
 export const StyledButtonArrow = styled(Button)`
+    &:focus{
+        background-color: white;
+    }
+    &:enabled{
+        background-color: white;
+    }
     &:hover{
         color: white;
     }

@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import * as S from './styles';
 import { Accordion, AccordionTab } from 'primereact/accordion';
+import Lottie from 'react-lottie';
+import * as animationData from '../../lotties/computer_code.json';
 
 const Skills = () => {
 
@@ -10,26 +12,16 @@ const Skills = () => {
         </>
     );
 
-    const arrowUpIcon =(
-        <>
-            <S.StyledArrowUpIcon />
-        </>
-    );
-
-    const [icon, setIcon] = useState(arrowDownIcon);
-
     const handleClick = (event, cardId, cardDescription) => {
        
         var descriptionCard = document.getElementById(cardDescription);
         var btnCard = document.getElementById('btn'+cardId);
 
-        //setIcon(icon == arrowDownIcon ? arrowUpIcon : arrowDownIcon);
-
         if(descriptionCard.style.opacity > 0){
             descriptionCard.style.opacity = 0;
             descriptionCard.style.display = 'none';
         }else{
-            //descriptionCard.style.display = 'flex';
+        
             descriptionCard.style.display = '';
             descriptionCard.style.opacity = 0;
             var last = +new Date();
@@ -44,7 +36,11 @@ const Skills = () => {
             tick();
         }
         
-
+        if(btnCard.children[0].style.rotate === '180deg'){
+            btnCard.children[0].style.rotate = '360deg';
+        }else if(btnCard.children[0].style.rotate = '360deg'){
+            btnCard.children[0].style.rotate = '180deg';
+        }
     }
 
     const titleFrontEnd = (
@@ -61,8 +57,17 @@ const Skills = () => {
 
     const footerCards = (cardId, descriptionId) => {
     
-        return <S.StyledButtonArrow onClick={(e) => handleClick(e, cardId, descriptionId)} id={'btn'+cardId} className="btnFooterCard -close" severity="secondary" size="small" text raised rounded> {icon} </S.StyledButtonArrow>
+        return <S.StyledButtonArrow onClick={(e) => handleClick(e, cardId, descriptionId)} id={'btn'+cardId} className="btnFooterCard -close" severity="secondary" size="small" text raised rounded> {arrowDownIcon} </S.StyledButtonArrow>
         
+    };
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        }
     };
 
     return (
@@ -79,10 +84,13 @@ const Skills = () => {
 
                         <div className="inline-block col-12">
                             <S.StyledCardSkills>
-
-                            <h1 style={{color: 'white'}}>HABILIDADES</h1>
-
-                            <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
+                            
+                            <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+                                <h1 style={{color: 'white', marginLeft: '35%', marginTop: '5%'}}>HABILIDADES</h1>
+                                <Lottie options={defaultOptions} width={'250px'} style={{margin: '0px 15% 0px 0px'}} />
+                            </div>
+                            
+                            <div className="col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4" style={{display: 'inline-grid'}}>
                                 <S.StyledCard className="cardFront" title={titleFrontEnd} footer={footerCards('cardFront', 'descriptionFront')}>
                                     <h1><S.StyledJsIcon /> <S.StyledBootstrapIcon /> <S.StyledReactIcon /></h1>
                                     <p className="m-0 description" id="descriptionFront" style={{display: 'none'}}>
@@ -92,7 +100,7 @@ const Skills = () => {
                                 </S.StyledCard>
                             </div>
 
-                            <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
+                            <div className="col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4" style={{display: 'inline-grid'}}>
                                 <S.StyledCard className="cardBack" title={titleBackEnd} footer={footerCards('cardBack', 'descriptionBack')}>
                                     <h1><S.StyledPhpIcon /><S.StyledYiiIcon /><S.StyledLaravelIcon/></h1>
                                     <p className="m-0 description" id="descriptionBack" style={{display: 'none'}}>
@@ -101,7 +109,7 @@ const Skills = () => {
                                 </S.StyledCard>
                             </div>
 
-                            <div className="inline-block col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4">
+                            <div className="col-12 sm:col-12 md:col-4 lg:col-4 xl:col-4" style={{display: 'inline-grid'}}>
                                 <S.StyledCard className="cardOthers" title={titleOthers} footer={footerCards('cardOthers', 'descriptionOthers')}>
                                     <h1><S.StyledMysqlIcon /><S.StyledGitIcon /><S.StyledChipIcon /></h1>
                                     <p className="m-0 description" id="descriptionOthers" style={{display: 'none'}}>
