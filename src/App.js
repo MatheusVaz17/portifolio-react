@@ -9,6 +9,7 @@ import ProfilePhoto from './components/ProfilePhoto';
 import AboutMe from './components/AboutMe';
 import GlobalStyle from './Global/style';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 const App = () => {
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const App = () => {
         <ProfilePhoto />
         <AboutMe />
         <Skills />
+        <Projects />
     </div>
 
   );
