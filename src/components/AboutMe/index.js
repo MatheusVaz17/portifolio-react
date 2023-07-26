@@ -50,12 +50,12 @@ const AboutMe = () => {
                 <Lottie options={defaultOptions} width={screenWidth < 760 ? '195px' : '400px'} height={screenWidth < 760 ? '155px' : '300px'} />
            
                 <div style={style_content}>
-                    <Card  className="md:w-25rem" style={{width: '50%', boxShadow: '7px 7px'}}>
-                    <S.TitleAboutMe>SOBRE MIM</S.TitleAboutMe>
+                    <S.CardAboutStyle className="md:w-25rem" style={{boxShadow: '7px 7px'}}>
+                    <S.TitleAboutMe>SOBRE MIM ☕</S.TitleAboutMe>
                         <p className="m-0">
                             {user?.description}
                         </p>
-                    </Card>
+                    </S.CardAboutStyle>
                 </div>
             </div>
             

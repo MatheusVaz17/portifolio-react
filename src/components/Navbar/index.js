@@ -11,11 +11,13 @@ const Navbar = () => {
         },
         {
             label: 'Habilidades',
-            icon: 'pi pi-code'
+            icon: 'pi pi-code',
+            url: "#skills"
         },
         {
             label: 'Projetos',
-            icon: 'pi pi-check'
+            icon: 'pi pi-check',
+            url: "#projects"
         },
         {
             label: 'Contato',

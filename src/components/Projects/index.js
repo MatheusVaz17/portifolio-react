@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
 import getProjectsData from '../../services/ProjectsService';
+import Lottie from 'react-lottie';
+import * as animationData from '../../lotties/rocket.json';
+import * as S from './styles';
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
@@ -41,11 +44,24 @@ const Projects = () => {
             </div>
         );
     }
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        }
+    };
+
     return (
-        <div className="card" style={{backgroundColor: "rgb(0, 0, 14)"}}>
+        <div id="projects" className="card" style={{backgroundColor: "rgb(0, 0, 14)"}}>
 
             <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
-                <h1 style={{color: 'white', marginTop: '5%'}}>PROJETOS</h1>
+                <h1 style={{color: 'white'}}>PROJETOS</h1>
+                <S.AnimationLottie>
+                    <Lottie options={defaultOptions} />
+                </S.AnimationLottie>
             </div>
             <Carousel numScroll={1} autoplayInterval={5000} numVisible={3} value={projects} itemTemplate={productTemplate} responsiveOptions={responsiveOptions} />
 

@@ -95,3 +95,29 @@ export const StyledCard = styled(Card)`
         }
     }
 `;
+
+export const AnimationLottie = styled.div`
+    @media (max-width: 600px) {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }
+    @media (min-width: 768px) {
+        width: 250px;
+    }
+`;
+
+export const SkillsTitle = styled.h1`
+    color: white;
+    margin-top: 5%;
+    @media (max-width: 600px) {
+        margin-left: 5%;
+    }
+    @media (max-width: 768px) {
+        margin-left: 5%;
+    }
+    @media (min-width: 768px) {
+        margin-left: 20%;
+    }
+`;
