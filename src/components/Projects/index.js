@@ -63,7 +63,7 @@ const Projects = () => {
                     <Lottie options={defaultOptions} />
                 </S.AnimationLottie>
             </div>
-            <Carousel numScroll={1} autoplayInterval={5000} numVisible={3} value={projects} itemTemplate={productTemplate} responsiveOptions={responsiveOptions} />
+            <Carousel data-aos="fade-right" numScroll={1} autoplayInterval={5000} numVisible={3} value={projects} itemTemplate={productTemplate} responsiveOptions={responsiveOptions} />
 
         </div>
     )

@@ -6,6 +6,7 @@ import * as animationData from '../../lotties/programming.json';
 import * as S from './styles';
 import { useMediaQuery } from 'react-responsive';
 
+
 const AboutMe = () => {
 
     const [user, setUser] = useState();
@@ -47,10 +48,10 @@ const AboutMe = () => {
             </div>
 
             <div id="aboutMe">
-                <Lottie options={defaultOptions} width={screenWidth < 760 ? '195px' : '400px'} height={screenWidth < 760 ? '155px' : '300px'} />
+                <Lottie data-aos="fade-right"  options={defaultOptions} width={screenWidth < 760 ? '195px' : '400px'} height={screenWidth < 760 ? '155px' : '300px'} />
            
-                <div style={style_content}>
-                    <S.CardAboutStyle className="md:w-25rem" style={{boxShadow: '7px 7px'}}>
+                <div style={style_content} >
+                    <S.CardAboutStyle data-aos="zoom-in" data-aos-once="true" data-aos-offset="300" data-aos-easing="ease-in-sine" className="md:w-25rem" style={{boxShadow: '7px 7px'}}>
                     <S.TitleAboutMe>SOBRE MIM ☕</S.TitleAboutMe>
                         <p className="m-0">
                             {user?.description}

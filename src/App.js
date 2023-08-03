@@ -10,10 +10,14 @@ import AboutMe from './components/AboutMe';
 import GlobalStyle from './Global/style';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const App = () => {
 
   useEffect(() => {
     document.body.classList.add('bg-gray');
+    AOS.init();
   }, []);
 
   return (

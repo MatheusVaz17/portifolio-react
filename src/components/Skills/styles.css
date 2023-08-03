@@ -1,0 +1,15 @@
+@keyframes moveWave {
+    0% {
+        right: 0%;
+    }
+    50% {
+        right: 5%;
+    }
+    100% {
+        right: 0%;
+    }
+}
+
+.moveAnimation{
+    animation: 5s infinite alternate moveWave;
+}
