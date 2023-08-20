@@ -23,6 +23,7 @@
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.10",
     "tsparticles": "^2.9.3",
+    "typewriter-effect": "^2.20.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

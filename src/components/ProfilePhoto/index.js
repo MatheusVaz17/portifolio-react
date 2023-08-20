@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import * as S from './styles';
 import api from './../../services/api';
+import Typewriter from 'typewriter-effect';
+import './styles.css';
 
 const ProfilePhoto = () => {
 
@@ -22,7 +24,17 @@ const ProfilePhoto = () => {
             <S.Photo data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" photo={user?.profilePhoto} />
             <S.Info>
                 <h1>{name}</h1>
-                <h2>{'Desenvolvedor Web FullStack'}</h2>
+               
+                    <h2 style={{display: 'flex', justifyContent: 'center'}}>Desenvolvedor 
+                    <Typewriter
+                    options={{
+                        strings: ['Web Full Stack', 'PHP', 'React'],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                    </h2>
+                
             </S.Info>
         </S.Container>
     );

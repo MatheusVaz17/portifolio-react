@@ -12,6 +12,8 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -29,6 +31,8 @@ const App = () => {
         <AboutMe />
         <Skills />
         <Projects />
+        <Contact />
+        <Footer />
     </div>
 
   );
