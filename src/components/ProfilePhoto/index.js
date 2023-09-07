@@ -3,6 +3,7 @@ import * as S from './styles';
 import api from './../../services/api';
 import Typewriter from 'typewriter-effect';
 import './styles.css';
+import Lottie from 'react-lottie';
 
 const ProfilePhoto = () => {
 
@@ -21,7 +22,9 @@ const ProfilePhoto = () => {
 
     return (
         <S.Container>
-            <S.Photo data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" photo={user?.profilePhoto} />
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <S.Photo data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" photo={user?.profilePhoto} />
+            </div>
             <S.Info>
                 <h1>{name}</h1>
                

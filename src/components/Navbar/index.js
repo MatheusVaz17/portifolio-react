@@ -21,7 +21,8 @@ const Navbar = () => {
         },
         {
             label: 'Contato',
-            icon: 'pi pi-envelope'
+            icon: 'pi pi-envelope',
+            url: "#contact"
         },
         {
             label: 'GitHub',

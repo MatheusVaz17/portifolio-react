@@ -1,5 +1,15 @@
 .Typewriter span{
     color: #03c4e8;
-    font-size: 23px;
     margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    .Typewriter span{
+        font-size: 18px;
+    }
+}
+@media (min-width: 768px) {
+    .Typewriter span{
+        font-size: 23px;
+    }
 }

@@ -97,7 +97,8 @@ const Skills = () => {
                                 <S.StyledCard className="cardFront" title={titleFrontEnd} footer={footerCards('cardFront', 'descriptionFront')}>
                                     <h1><S.StyledJsIcon /> <S.StyledBootstrapIcon /> <S.StyledReactIcon /></h1>
                                     <p className="m-0 description" id="descriptionFront" style={{display: 'none'}}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
+                                        No Front-End tenho conhecimento em desenvolvimento de sites dinâmicos tanto em sistemas monolíticos e micro serviços, utilizando CSS, JavaScript, framework Bootstrap e biblioteca ReactJS (Inclusive esse site foi desenvolvido por mim utilizando ReactJS)
+
                                     </p>
 
                                 </S.StyledCard>
@@ -107,7 +108,8 @@ const Skills = () => {
                                 <S.StyledCard className="cardBack" title={titleBackEnd} footer={footerCards('cardBack', 'descriptionBack')}>
                                     <h1><S.StyledPhpIcon /><S.StyledYiiIcon /><S.StyledLaravelIcon/></h1>
                                     <p className="m-0 description" id="descriptionBack" style={{display: 'none'}}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
+                                        No Back-End possuo conhecimento na linguagem PHP no desenvolvimento de APIs REST, com  o padrão de projeto MVC utilizando os frameworks Yii2, Phalcon e Laravel.
+                                        Prezo muito por um código limpo e estudo para seguir ao máximo as boas práticas
                                     </p>
                                 </S.StyledCard>
                             </div>
@@ -116,7 +118,7 @@ const Skills = () => {
                                 <S.StyledCard className="cardOthers" title={titleOthers} footer={footerCards('cardOthers', 'descriptionOthers')}>
                                     <h1><S.StyledMysqlIcon /><S.StyledGitIcon /><S.StyledChipIcon /></h1>
                                     <p className="m-0 description" id="descriptionOthers" style={{display: 'none'}}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ultricies neque. Sed eleifend est sit amet libero efficitur auctor. Aliquam eget faucibus nisl, vel varius leo. In lobortis justo risus, et tempus purus tincidunt a. Nam faucibus, mauris feugiat malesuada congue, nisl felis facilisis lacus, ut mattis nulla eros fermentum libero. Etiam blandit est vitae efficitur venenatis. Morbi in quam posuere, posuere ante ut.
+                                        Possuo conhecimento em banco de dados com sgbd em MySQL e atualmente estudo também MongoDB, os projetos na qual trabalho possuem versionamento de código (GIT) e também possuo experiência com sistemas IoT e protocolos de comunicação 
                                     </p>
                                 </S.StyledCard>
                             </div>

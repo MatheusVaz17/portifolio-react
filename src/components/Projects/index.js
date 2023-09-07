@@ -35,7 +35,7 @@ const Projects = () => {
         return (
             <div className="border-1 surface-border border-round m-2 text-center py-5 px-3" style={{backgroundColor: "white"}}>
                 <div className="mb-3">
-                    <img src={project.image_url} alt={project.name} className="w-6 shadow-2" />
+                    <img src={'media/projects/'+project.image_url} alt={project.name} className="w-6 shadow-2" />
                 </div>
                 <div>
                     <h4 className="mb-1">{project.name}</h4>
